@@ -1,0 +1,4 @@
+default:
+  ACTIVE: Mykonos # set active AOI
+  ACTIVE_DATASET: roman # set active correction method
+

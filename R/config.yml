@@ -1,0 +1,49 @@
+default:
+  STATISTIC: mean
+  YEAR: 2018 # in case for data with multiple years, set one year
+  DNB_grd: daily_DNB.grd #name for corrected DNB (roman/cao)
+  original_DNB_grd: original_daily_DNB.grd #name for original DNB
+  EXTENTS: extents.csv
+
+cao: # contains directories for lunar correction with reflectance
+  geotiffs_dir: geotiffs_reflectance_cao # geotiffs directory exported from Python
+  grd_dir: grd_cao # grd generated from geotiffs2grid.R
+  # VNP46A1 tile is covered by multiple reflectance (VNP09GA) tiles
+  DNB_geotiffs_DIR1: BlackMarble_VNP46A1_BIG_VNP09GA_h19v05
+  DNB_geotiffs_DIR2: BlackMarble_VNP46A1_BIG_VNP09GA_h20v05
+  
+roman: # contains directories for lunar correction with BRDF
+  geotiffs_dir: geotiffs # geotiffs directory exported from Python
+  grd_dir: grd # grd generated from geotiffs2grid.R
+  # VNP46A1 tile is covered by multiple BRDF (vnp43ma4) tiles
+  DNB_geotiffs_DIR1: BlackMarble_VNP46A1_BIG_BRDF_vnp43ma4v001_h19v05
+  DNB_geotiffs_DIR2: BlackMarble_VNP46A1_BIG_BRDF_vnp43ma4v001_h20v05
+
+# each AOI is covered by different reflectance or BRDF tile. set appropriate dir
+Mykonos:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR2
+  
+Santorini:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR2
+  
+Kea:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
+Aegina:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
+Skiathos:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
+Nafplio:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
+Athens:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
+Sifnos:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
+Hydra:
+  DNB_geotiffs_DIR: DNB_geotiffs_DIR1
+  
